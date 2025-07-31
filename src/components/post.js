@@ -80,7 +80,7 @@ const Post = ({ post, relatedPost, type }) => {
     doc.querySelectorAll("a").forEach(anchor => {
       try {
         const url = new URL(anchor.href, window.location.origin)
-        if (!url.href.includes("www.loginradius.com")) {
+        if (url.hostname !== "www.loginradius.com") {
           anchor.setAttribute("target", "_blank")
         }
       } catch (e) {
